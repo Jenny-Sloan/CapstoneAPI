@@ -6,7 +6,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const app = express()
 //express is building our server - a library or framework to use to make your server
-const port = process.env.PORT
+const port = process.env.PORT == undefined ? 500 : process.env.PORT
 //makes it work on whateve port heroku gives us
 
 
