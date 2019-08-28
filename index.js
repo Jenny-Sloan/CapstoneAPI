@@ -6,7 +6,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const app = express()
 //express is building our server - a library or framework to use to make your server
-const port = "https://nameless-inlet-47570.herokuapp.com/"
+const port = process.env.PORT
+//makes it work on whateve port heroku gives us
 
 
 // Connection URL
@@ -26,7 +27,7 @@ app.use(bodyParser.json())
 app.get('/', async function (req, res) {
     const results = await dogs.find()
     res.status(200).send(results)
-})
+})//aync and await Async can be paused - nothing else happens until the await comes back
 // '/' setting your end point for your server
 
 app.put('/:id', async function (req, res) {
